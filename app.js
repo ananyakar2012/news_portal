@@ -31,7 +31,7 @@ exec('curl ip-adresim.app', function(error, stdout, stderr){
     var ipaddress = stdout
     var geo = geoip.lookup(ipaddress.trim())
     console.log(geo)
-    var weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${geo.ll[0]}&lon=${geo.ll[1]}&appid=a00c884130f91f44ecf831a3b28771cd`
+    var weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${geo.ll[0]}&lon=${geo.ll[1]}&appid=testapikey`
     app.get("/", (req, res) => {
         request(weatherURL, {json: true}, (err, body) => {
             var sortArr = { date: -1 }
